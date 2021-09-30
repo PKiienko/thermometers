@@ -13,15 +13,18 @@ const Thermometer = ({ apiKey, id, active }) => {
         const records = await response.json();
         
         setInfo(records);
-          
+
+        console.log(records);
         console.log(records.field1);
         console.log(records.created_at);
     }    
 
     return (
         <div>
-            <div>
-                <p key={Math.random()}>{info.field1} {info.created_at}</p>
+            <div key={Math.random()}>
+                <p>{info.field1}</p>
+                <p>{info.created_at}</p>
+                <p>{info.entry_id}</p>
             </div>
         </div>
     );
